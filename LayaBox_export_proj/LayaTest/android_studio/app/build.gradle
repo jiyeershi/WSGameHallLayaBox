@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.layabox.game"
+        minSdkVersion 9
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    sourceSets.main{
+        jniLibs.srcDir 'libs'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes {
+        //release版本配置
+//        release {
+//            debuggable false
+//            // 是否进行混淆
+//            minifyEnabled true
+//            //去除没有用到的资源文件，要求minifyEnabled为true才生效
+//            shrinkResources true
+//            // 混淆文件的位置
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+//            signingConfig signingConfigs.debug
+//            //ndk的一些相关配置，也可以放到defaultConfig里面。
+//            //指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,arm-v8之类的so会被过滤掉)
+//            ndk {
+//                abiFilter "armeabi"
+//            }
+//        }
+        //debug版本配置
+//        debug {
+//            debuggable true
+//            // 是否进行混淆
+//            minifyEnabled false
+//            //去除没有用到的资源文件，要求minifyEnabled为true才生效
+//            shrinkResources true
+//            // 混淆文件的位置
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+//            signingConfig signingConfigs.debug
+//            //ndk的一些相关配置，也可以放到defaultConfig里面。
+//            //指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,arm-v8之类的so会被过滤掉)
+//            ndk {
+//                abiFilter "armeabi"
+//            }
+//        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile files('libs/wsGameJointSDK.jar')
+}
