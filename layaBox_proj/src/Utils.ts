@@ -95,7 +95,7 @@ class Utils{
       if(Laya.Browser.window.conch) {
           let platform = this.getPlatform()
           if (platform == 1){
-            this.platformObj.call("doPay", timestamp1.toString(), "10", "测试商品购买", "");
+            this.platformObj.call("doPay", timestamp1.toString(), 10, "测试商品购买", "");
             // this.platformObj.call("doShareRichText", title, content, iconUrl, h5Url);
           }else{
             this.platformObj.callWithBack(function(result){
